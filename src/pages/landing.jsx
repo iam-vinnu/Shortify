@@ -36,14 +36,14 @@ function LandingPage() {
       </form>
       <img src="./banner.jpeg" alt="" className='w-full my-11 md:px-11' />
       <div className='text-2xl mt-7'>FAQ's</div>
-      <Accordion type="multiple" collapsible className='w-full md:px-11'>
+      <Accordion type="multiple" collapsible className='sm:w-full md:px-11'>
         <AccordionItem value="item-1">
           <AccordionTrigger>How does the Shortify URL Shortner works?</AccordionTrigger>
           <AccordionContent>
             when you enter a long URL, our system will generate a shorter version of that URL.
             This shortened URL redirects to the original long URL when accessed.
           </AccordionContent>
-        </AccordionItem>
+        </AccordionItem>       
         <AccordionItem value="item-2">
           <AccordionTrigger>Do i need account to use the app?</AccordionTrigger>
           <AccordionContent>

@@ -8,12 +8,12 @@ import { LinkIcon, LogOut } from 'lucide-react';
 const Header = () => {
 
   const navigate = useNavigate();
-  const user = true;
+  const user = false;
   return (
     <div>
       <nav className='py-4 px-8 flex justify-between items-center'>
         <Link to='/'>
-          <img src="/logo.png" alt="" className='h-16' />
+          <img src="/NewLogo.png" alt="" className='h-16' />
         </Link>
         <div>
           {!user ?
