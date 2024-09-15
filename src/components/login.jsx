@@ -36,16 +36,10 @@ const handleInputChange = (e)=>{
 
 const {data , error , loading , fn:fnLogin} = useFetch(login,formData);
 
-useEffect(()=>{
-    if (data) {
-        console.log('Data received:', data);
-      }
-      if (error) {
-        console.error('Error:', error.message);
-      }
+useEffect(() => {
+    console.log(data);
     
-  //  if(error === null && data)
-},[data , error] );
+  }, [data, error]);
 
 const handleLogin =async ()=>{
     setErrors([])
@@ -57,7 +51,7 @@ const handleLogin =async ()=>{
     })
        await schema.validate(formData , {abortEarly: false});
        
-       await fnLogin();
+       await fnLogin(formData);
 
     } catch (error) {
         const newErrors = {};
