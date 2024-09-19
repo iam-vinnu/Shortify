@@ -7,6 +7,7 @@ import Auth from './pages/auth'
 import RedirectLink from './pages/redirect-link'
 import './App.css'
 import LandingPage from './pages/landing'
+import UrlProvider from './context'
 
 
 
@@ -39,7 +40,9 @@ function App() {
 
   return (
     <>
-    <RouterProvider router={Router}/>
+    <UrlProvider>
+        <RouterProvider router={Router}/>
+    </UrlProvider>
   </>
   )
 }
