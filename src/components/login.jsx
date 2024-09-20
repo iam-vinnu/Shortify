@@ -30,7 +30,7 @@ const Login = () => {
 
 const navigate = useNavigate();
 let [searchParams] = useSearchParams();
-const longlink =  searchParams.get('createNew')
+const longLink =  searchParams.get('createNew')
 
 const handleInputChange = (e)=>{
          const {name , value } = e.target
@@ -47,7 +47,7 @@ const {fetchUser} =UrlState();
 
 useEffect(() => {
    if(error === null && data){
-    navigate(`/dashboard?${longlink ? `creatNew=${longlink}` : ""}`);
+     navigate(`/dashboard?${longLink ? `creatNew=${longLink}` : ""}`);
      fetchUser();
    }
 

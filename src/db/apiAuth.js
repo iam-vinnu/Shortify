@@ -11,14 +11,12 @@ export const login = async ({email , password})=>{
    //   } catch (error) {
    //      throw new Error(error.message);
    //   }
-
    const {data , error } = await supabase.auth.signInWithPassword({
       email,
       password,
    })
 
    if(error) throw new Error(error.message);
-
    return data
 }
 
@@ -33,7 +31,7 @@ export async function getCurrentUser(){
 
 export async function signup({name, email, password, profile_pic}){
 
-    const filename = `dp${name.split(' ').join('-')}-${Math.random}`
+    const filename = `dp${name.split(' ').join('-')}-${Math.random()}`
     const {error:storageError} = await supabase.storage.from('profile_pic').upload(filename, profile_pic);
 
     if (storageError) throw new Error(storageError.message);
@@ -50,7 +48,17 @@ export async function signup({name, email, password, profile_pic}){
     });
 
     if(error) throw new Error(error.message);
-
+  
+   //  if (error) {
+   //    setError(error); 
+   //  }
+    
     return data;
     
+}
+
+
+export async function logout() {
+   const {error} = await supabase.auth.signOut();
+   if(error) throw new Error(error.message);
 }

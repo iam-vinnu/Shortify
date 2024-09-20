@@ -32,7 +32,7 @@ const Signup = () => {
 
   const navigate = useNavigate();
   let [searchParams] = useSearchParams();
-  const longlink = searchParams.get('createNew')
+  const longLink = searchParams.get('createNew')
 
   const handleInputChange = (e) => {
     const { name, value , files } = e.target
@@ -49,7 +49,7 @@ const Signup = () => {
 
   useEffect(() => {
     if (error === null && data) {
-      navigate(`/dashboard?${longlink ? `creatNew=${longlink}` : ""}`);
+      navigate(`/dashboard?${longLink ? `creatNew=${longLink}` : ""}`);
       fetchUser();
     }
 
@@ -84,9 +84,9 @@ const Signup = () => {
 
     <Card>
       <CardHeader>
-        <CardTitle>Login</CardTitle>
+        <CardTitle>SignUp</CardTitle>
         <CardDescription>
-          to your account if you already have one
+          Create An Account
         </CardDescription>
         {error && <Error message={error.message} />}
       </CardHeader>

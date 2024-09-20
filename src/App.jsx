@@ -8,31 +8,36 @@ import RedirectLink from './pages/redirect-link'
 import './App.css'
 import LandingPage from './pages/landing'
 import UrlProvider from './context'
+import RequireAuth from './components/require-auth'
 
 
 
 const Router = createBrowserRouter([
-    {
-      element:< AppLayout/>,
-      children:[
-        {
-          path:'/',
-          element:<LandingPage/>
-        },{
-          path:'/dashboard',
-          element:<Dashboard/>
-        },{
-          path:'/auth',
-          element:<Auth/>
-        },{
-          path:'/link/:id',
-          element:<Link/>
-        },{
-          path:'/:id',
-          element:<RedirectLink/>
-        },
-      ]
-    }
+  {
+    element: < AppLayout />,
+    children: [
+      {
+        path: '/',
+        element: <LandingPage />
+      }, {
+        path: '/dashboard',
+        element: <RequireAuth>
+          <Dashboard />
+        </RequireAuth>
+      }, {
+        path: '/auth',
+        element: <Auth />
+      }, {
+        path: '/link/:id',
+        element: <RequireAuth>
+          <Link />
+        </RequireAuth>
+      }, {
+        path: '/:id',
+        element: <RedirectLink />
+      },
+    ]
+  }
 ])
 
 
@@ -40,11 +45,11 @@ function App() {
 
   return (
     <>
-    <UrlProvider>
-        <RouterProvider router={Router}/>
-    </UrlProvider>
-  </>
+      <UrlProvider>
+        <RouterProvider router={Router} />
+      </UrlProvider>
+    </>
   )
 }
-     
+
 export default App        

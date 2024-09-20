@@ -4,11 +4,16 @@ import { Button } from './ui/button'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from './ui/dropdown-menu';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { LinkIcon, LogOut } from 'lucide-react';
+import { UrlState } from '@/context';
+import useFetch from '@/hooks/use-fetch';
+import { logout } from '@/db/apiAuth';
+import { BarLoader } from 'react-spinners';
 
 const Header = () => {
 
   const navigate = useNavigate();
-  const user = false;
+  const {user , fetchUser} = UrlState();
+  const{loading , fn:fnLogout} = useFetch(logout);
   return (
     <div>
       <nav className='py-4 px-8 flex justify-between items-center'>
@@ -22,19 +27,24 @@ const Header = () => {
               <DropdownMenu>
                 <DropdownMenuTrigger className='w-10 rounded-full overflow-hidden'>
                   <Avatar>
-                    <AvatarImage src="https://github.com/shadcn.png" />
+                    <AvatarImage src={user?.user_metadata?.profile_pic} />
                     <AvatarFallback>BB</AvatarFallback>
                   </Avatar>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
-                  <DropdownMenuLabel>Binay Behera</DropdownMenuLabel>
+                  <DropdownMenuLabel>{user?.user_metadata?.name}</DropdownMenuLabel>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem>
                   <LinkIcon className='mr-2 h-4 w-4'/>
                     My Links</DropdownMenuItem>
                   <DropdownMenuItem className="text-red-400 flex items-center">
                     <LogOut className='mr-2 h-4 w-4'/>
-                     <span>Logout</span>
+                     <span onClick={()=>{
+                      fnLogout().then(()=>{
+                        fetchUser();
+                        navigate('/')
+                      })
+                     }}>Logout</span>
                     </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
@@ -42,6 +52,7 @@ const Header = () => {
           }
         </div>
       </nav>
+        {loading && <BarLoader className='mb-4' width={'100%'} color='#36d7b7'/>}
     </div>
   )
 }
