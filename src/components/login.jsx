@@ -47,7 +47,7 @@ const {fetchUser} =UrlState();
 
 useEffect(() => {
    if(error === null && data){
-     navigate(`/dashboard?${longLink ? `creatNew=${longLink}` : ""}`);
+     navigate(`/dashboard?${longLink ? `createNew=${longLink}` : ""}`);
      fetchUser();
    }
 

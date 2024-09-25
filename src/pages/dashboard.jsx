@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import CreateLink from '@/components/ui/create-link';
 import { Input } from '@/components/ui/input';
 import Linkcard from '@/components/ui/link-card';
 import { UrlState } from '@/context';
@@ -60,7 +61,7 @@ const filterUrls = urls?.filter((url)=>
 
       <div className='flex justify-between'>
         <h1 className='text-4xl font-extrabold'>My Links</h1>
-        <Button>Create Links</Button>
+        <CreateLink/>
       </div>
 
       <div className='relative'>
