@@ -68,3 +68,20 @@ export async function getLongUrl(id) {
   return shortLinkData;
 }
 
+export async function getUrl({id , user_id}) {
+  let {data, error} = await supabase
+    .from("urls")
+    .select("*")
+    .eq("id" , id)
+    .eq("user_id" ,user_id )
+    .single();
+
+
+    if (error) { 
+      console.error(error.message);
+      throw new Error("Error getting URL");
+    }
+  
+        
+   return data;
+}
