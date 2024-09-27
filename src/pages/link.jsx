@@ -53,7 +53,7 @@ function Link() {
                   <span className='flex items-end font-extralight text-sm'>
                     {new Date(url?.created_at).toLocaleString()}
                     </span>
-              </div>
+              </div>     
 
               <div className='w-3/5'>
                
