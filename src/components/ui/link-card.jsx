@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from './button'
-import { Copy, Download, Trash } from 'lucide-react'
+import { Copy, Download, Edit, Trash } from 'lucide-react'
 import useFetch from '@/hooks/use-fetch'
 import { deleteUrl } from '@/db/apiUrls'
 import { BeatLoader } from 'react-spinners'
@@ -20,6 +20,10 @@ const Linkcard = ({url , fetchUrls}) => {
        anchor.click();
 
        document.body.removeChild(anchor);
+ }
+
+ const editLink =()=>{
+  
  }
 
  const{loading: loadingDelete , fn:fnDelete} =  useFetch(deleteUrl , url?.id);
@@ -47,6 +51,9 @@ const Linkcard = ({url , fetchUrls}) => {
           </Button>
           <Button variant="ghost" onClick={()=>fnDelete().then(()=>fetchUrls())}>
              { loadingDelete?<BeatLoader size={5} color='white'/> : <Trash/>}
+          </Button>
+          <Button variant="ghost" onClick={editLink}>
+            <Edit/>
           </Button>
         </div>
     </div>
