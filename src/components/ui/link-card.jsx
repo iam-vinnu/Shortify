@@ -35,14 +35,14 @@ const Linkcard = ({url , fetchUrls}) => {
           <span className='text-3xl font-extrabold hover:underline cursor-pointer'>{url?.title}</span>
           
           <span className='text-2xl text-blue-400 font-bold hover:underline cursor-pointer'>
-            https://shortify.in/{url?.custom_url ? url?.custom_url : url.short_url}</span>
+          https://shotifyy.netlify.app/{url?.custom_url ? url?.custom_url : url.short_url}</span>
 
           <span className='flex items-center gap-1 hover:underline cursor-pointer'>{url?.original_url}</span>
           <span className='flex items-end font-extralight flex-1'>{new Date(url?.created_at).toLocaleString()}</span>
         </Link>
         <div className='flex gap-2'>
           <Button variant="ghost" onClick={()=>
-            navigator.clipboard.writeText(`https://shortify.in/${url?.short_url}`)
+            navigator.clipboard.writeText(`https://shotifyy.netlify.app/${url?.short_url}`)
           }>
             <Copy/>
           </Button>

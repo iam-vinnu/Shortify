@@ -70,10 +70,10 @@ function Link() {
           <span className='text-6xl font-extrabold hover:underline cursor-pointer'>
             {url?.title}
           </span>
-          <a href="https://shortify.in/{link}"
+          <a href="https://shotifyy.netlify.app/{link}"
             target='_blank'
             className='text-2xl sm:text-4xl text-blue-400 font-bold hover:underline'
-          >https://shortify.in/{link}</a>
+          >https://shotifyy.netlify.app/{link}</a>
           <a href="{url?.original_url}" target='_blank'>
             <LinkIcon className='p-2 text-xl' />
             {url?.original_url}</a>
@@ -82,7 +82,7 @@ function Link() {
           </span>
           <div className='flex gap-2'>
             <Button variant="ghost" onClick={() =>
-              navigator.clipboard.writeText(`https://shortify.in/${url?.short_url}`)
+              navigator.clipboard.writeText(`https://shotifyy.netlify.app/${url?.short_url}`)
             }>
               <Copy />
             </Button>

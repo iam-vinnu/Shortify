@@ -101,7 +101,7 @@ const CreateLink = () => {
                     {errors.longUrl && <Error message={errors.longUrl} />}
 
                     <div className='flex items-center gap-2'>
-                        <Card className='p-2'>shortify.in</Card> /
+                        <Card className='p-2'>shotify.netlify.app</Card> /
                         <Input id='customUrl' placeholder='Custom URL(optional)'
                         value={formValues.customUrl} 
                         onChange={handleChange} />
