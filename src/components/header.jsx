@@ -18,7 +18,7 @@ const Header = () => {
     <div>
       <nav className='py-4 px-8 flex justify-between items-center'>
         <Link to='/'>
-          <img src="/NewLogo.png" alt="" className='h-16' />
+          <img src="/NewLogo.png" alt="" className='h-8' />
         </Link>
         <div>
           {!user ?

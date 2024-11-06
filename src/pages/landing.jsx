@@ -34,7 +34,7 @@ function LandingPage() {
           className="h-full flex-1 py-4 px-4" />
         <Button onClick={handleShorten} className="h-full" type="submit" variant="destructive">Shorten!</Button>
       </form>
-      <img src="./banner.jpeg" alt="" className='w-full my-11 md:px-11' />
+      <img src="./BANNER.webp" alt="" className='w-full my-11 md:px-11' />
       <div className='text-2xl mt-7'>FAQ's</div>
       <Accordion type="multiple" collapsible className='sm:w-full md:px-11'>
         <AccordionItem value="item-1">

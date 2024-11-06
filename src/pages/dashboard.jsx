@@ -60,7 +60,7 @@ const filterUrls = urls?.filter((url)=>
       </div>
 
       <div className='flex justify-between'>
-        <h1 className='text-4xl font-extrabold'>My Links</h1>
+        <h1 className='text-2xl sm:text-4xl font-extrabold'>My Links</h1>
         <CreateLink/>
       </div>
 

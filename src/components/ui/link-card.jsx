@@ -23,7 +23,7 @@ const Linkcard = ({url , fetchUrls}) => {
  }
 
  const editLink =()=>{
-  
+   
  }
 
  const{loading: loadingDelete , fn:fnDelete} =  useFetch(deleteUrl , url?.id);
@@ -52,9 +52,7 @@ const Linkcard = ({url , fetchUrls}) => {
           <Button variant="ghost" onClick={()=>fnDelete().then(()=>fetchUrls())}>
              { loadingDelete?<BeatLoader size={5} color='white'/> : <Trash/>}
           </Button>
-          <Button variant="ghost" onClick={editLink}>
-            <Edit/>
-          </Button>
+          
         </div>
     </div>
   )
