@@ -70,11 +70,11 @@ function Link() {
           <span className='text-6xl font-extrabold hover:underline cursor-pointer'>
             {url?.title}
           </span>
-          <a href="https://shotifyy.netlify.app/{link}"
+          <a href={`https://shotifyy.netlify.app/${link}`}
             target='_blank'
             className='text-2xl sm:text-4xl text-blue-400 font-bold hover:underline'
           >https://shotifyy.netlify.app/{link}</a>
-          <a href="{url?.original_url}" target='_blank'>
+          <a href={url?.original_url} target='_blank'>
             <LinkIcon className='p-2 text-xl' />
             {url?.original_url}</a>
           <span className='flex items-end font-extralight text-sm'>
